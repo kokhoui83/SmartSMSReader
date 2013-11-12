@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, SmartSMSReaderActivity!</string>
+    <string name="app_name">Smart SMS Reader</string>
+    <string name="cb_enabled">Enabled</string>
+    <string name="cb_disabled">Disabled</string>
+    <string name="tv_volume">Voice Volume</string>
+    <string name="btn_setting">Setting</string>
+    <string name="tv_enable">Read Incoming SMS</string>
+    <string name="tv_speed">Speech Rate</string>
+
+</resources>

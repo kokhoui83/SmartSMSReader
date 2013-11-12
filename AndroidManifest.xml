@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.aliquam.android.smartsmsreader"
+    android:versionCode="1"
+    android:versionName="0.0.1" android:installLocation="auto">
+
+    <uses-sdk android:minSdkVersion="8" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+
+    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name">
+        <activity android:name=".settings.SmartSMSReaderSettings">
+        <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".settings.SMSReaderMainTab" >
+        </activity>
+        <activity
+            android:name=".settings.SMSReaderDictionaryTab" >
+        </activity>
+        <activity
+            android:name=".settings.SMSReaderSettingsTab" >
+        </activity>
+		<receiver android:name=".service.SMSReaderService">
+			<intent-filter>
+				<action android:name="android.provider.Telephony.SMS_RECEIVED"></action>
+			</intent-filter>
+		</receiver>
+	    <activity 
+	        android:name=".service.SmartSMSReaderActivity" >
+	    </activity>
+	    <receiver android:name=".widget.SMSReaderWidget">
+	        <intent-filter>
+	            <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+	            <action android:name="com.aliquam.android.smartsmsreader.CLICK_ENABLE" />
+	        </intent-filter>
+	        <meta-data android:name="android.appwidget.provider" android:resource="@xml/smsreaderwidget" />
+	    </receiver>
+    </application>
+
+</manifest>
